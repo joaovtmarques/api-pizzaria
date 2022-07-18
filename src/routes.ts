@@ -1,12 +1,13 @@
 import { Router } from 'express';
 
-import { AuthUserController } from './controllers/user/AuthUserController';
-import { CreateUserController } from './controllers/user/CreateUserController';
+import { AuthUserController, CreateUserController, DetailUserController } from './controllers/user';
+import { AuthMiddleware } from './middlewares/AuthMiddleware';
 
 const router = Router();
 
 // users
 router.post('/users', new CreateUserController().handle);
+router.get('/user', AuthMiddleware, new DetailUserController().handle);
 
 // sessions
 router.post('/sessions', new AuthUserController().handle);
