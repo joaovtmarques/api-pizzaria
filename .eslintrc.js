@@ -23,6 +23,12 @@ module.exports = {
     'react/prop-types': 'off',
     'no-param-reassign': 'off',
     "no-console'": 'off',
+    camelcase: [
+      'off',
+    ],
+    'class-methods-use-this': [
+      'off',
+    ],
     semi: [2, 'always'],
     'import/extensions': [
       'error',

@@ -1,14 +1,21 @@
-import express, { Request, Response, NextFunction } from 'express';
-import 'express-async-errors';
 import cors from 'cors';
+import express, { NextFunction, Request, Response } from 'express';
+import path from 'path';
 
 import { router } from './routes';
+
+import 'express-async-errors';
 
 const app = express();
 app.use(express.json());
 app.use(cors());
 
 app.use('/api', router);
+
+app.use(
+  '/api/files',
+  express.static(path.resolve(__dirname, '..', 'tmp')),
+);
 
 app.use((err: Error, req: Request, res: Response, next: NextFunction) => {
   if (err instanceof Error) {
