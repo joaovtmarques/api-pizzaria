@@ -1,6 +1,7 @@
 import { category } from './categories';
+import { order } from './orders';
 import { product } from './products';
-import { session } from './session';
+import { session } from './sessions';
 import { user } from './users';
 
 export {
@@ -8,4 +9,5 @@ export {
   product,
   category,
   session,
+  order,
 };

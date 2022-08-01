@@ -23,6 +23,7 @@ module.exports = {
     'react/prop-types': 'off',
     'no-param-reassign': 'off',
     "no-console'": 'off',
+    'object-curly-newline': 'off',
     camelcase: [
       'off',
     ],

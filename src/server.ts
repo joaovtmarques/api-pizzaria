@@ -2,9 +2,7 @@ import cors from 'cors';
 import express, { NextFunction, Request, Response } from 'express';
 import path from 'path';
 
-import {
-  session, category, product, user,
-} from './routes';
+import { category, order, product, session, user } from './routes';
 
 import 'express-async-errors';
 
@@ -12,7 +10,7 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 
-app.use('/api', session, user, category, product);
+app.use('/api', session, user, category, product, order);
 
 app.use(
   '/api/files',
